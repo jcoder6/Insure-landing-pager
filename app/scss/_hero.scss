@@ -1,0 +1,106 @@
+.hero {
+  .hide-for-menu {
+    position: absolute;
+  }
+  .img-mobile {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 100%;
+      height: 35rem;
+    }
+    // position: absolute;
+    @include breakpoint-up(large) {
+      display: none;
+    }
+  }
+  &__container {
+    overflow: hidden;
+    position: relative;
+    background-color: $darkViolet;
+    height: 40rem;
+    .img-background {
+      position: absolute;
+      top: -5rem;
+      right: 0;
+
+      @include breakpoint-down(medium) {
+        display: none;
+      }
+    }
+    @include breakpoint-down(medium) {
+      height: 45rem;
+    }
+  }
+
+  .mob-left {
+    position: absolute;
+    width: 45%;
+    max-width: 45%;
+
+    @include breakpoint-up(large) {
+      display: none;
+    }
+  }
+  .img-pattern-left {
+    display: inherit;
+    position: relative;
+    .desk-left {
+      position: absolute;
+      top: -10rem;
+
+      @include breakpoint-down(medium) {
+        display: none;
+      }
+    }
+    .mob-right {
+      width: 32%;
+      position: absolute;
+      bottom: -13rem;
+      right: 0;
+
+      @include breakpoint-up(medium) {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    top: -40rem;
+    position: relative;
+    // border: 1px solid pink;
+    display: flex;
+    padding: 7rem 9rem 0;
+
+    @include breakpoint-down(medium) {
+      padding: 4rem 2rem 5rem;
+      text-align: center;
+    }
+
+    .text-container {
+      .line {
+        display: inherit;
+        background: $darkGrayishViolet;
+        opacity: 0.5;
+        height: 1px;
+        width: 10rem;
+        margin-bottom: 5rem;
+
+        @include breakpoint-down(medium) {
+          display: none;
+        }
+      }
+    }
+    .img-container {
+      display: inherit;
+      img {
+        margin-left: 12px;
+        height: 107%;
+      }
+
+      @include breakpoint-down(medium) {
+        display: none;
+      }
+    }
+  }
+}

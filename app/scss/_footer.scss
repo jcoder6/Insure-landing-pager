@@ -1,0 +1,117 @@
+.footer {
+  &__container {
+    background-color: $veryLightGray;
+    position: relative;
+
+    .bgpatternmob {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+
+      @include breakpoint-up(large) {
+        display: none;
+      }
+    }
+
+    .bgpattern {
+      position: absolute;
+      z-index: 1;
+
+      @include breakpoint-down(medium) {
+        display: none;
+      }
+    }
+  }
+  &__content {
+    padding: 5rem 9rem;
+
+    @include breakpoint-down(medium) {
+      padding: 8rem 3rem;
+    }
+  }
+
+  &__head {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    // border: 1px solid pink;
+    border-bottom: 1px solid hsl(0, 0%, 85%);
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+
+    @include breakpoint-down(medium) {
+      flex-direction: column;
+      text-align: center;
+
+      .logo {
+        margin-bottom: 2rem;
+      }
+
+      .socials {
+        margin-left: 1rem;
+      }
+    }
+
+    .logo {
+      z-index: 2;
+    }
+
+    .socials {
+      z-index: 2;
+      margin-right: 10px;
+
+      a {
+        margin-right: 10px;
+
+        svg path {
+          transition: fill 200ms ease-in-out;
+        }
+
+        &:hover svg path {
+          fill: $darkViolet;
+        }
+      }
+    }
+  }
+
+  &__links {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    // border: 1px solid pink;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    @include breakpoint-down(medium) {
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+    }
+
+    .title {
+      color: $darkGrayishViolet;
+      margin-bottom: 2rem;
+    }
+
+    .flex {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+
+    a {
+      margin-bottom: 1rem;
+      color: $darkViolet;
+      transition: all 150ms ease-in-out;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
